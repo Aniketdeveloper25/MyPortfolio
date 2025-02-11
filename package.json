@@ -1,18 +1,14 @@
 {
-  "name": "my-portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^4.21.2",
-    "nodemailer": "^6.10.0",
-    "path": "^0.12.7"
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.8"
   }
 }
