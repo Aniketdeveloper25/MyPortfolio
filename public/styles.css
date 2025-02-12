@@ -155,40 +155,44 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
   header {
-    padding: 2rem 1rem;
-  }
-  
-  .sidebar {
-    min-height: auto;
-    padding: 1rem;
+    padding: 4rem 2rem !important;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%) !important;
   }
   
   .profile-img {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .section-padding {
-    padding: 2rem 0;
+    width: 200px !important;
+    height: 200px !important;
   }
   
   .project-grid, .education-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
   }
   
   section {
-    padding: 2rem 1rem;
+    padding: 4rem 2rem !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
+
+  .menu-toggle {
+    display: none !important;
   }
 }
 
 @media (max-width: 480px) {
   .profile-img {
-    width: 120px;
-    height: 120px;
+    width: 200px !important;
+    height: 200px !important;
   }
   
   h2 {
-    font-size: 1.75rem;
+    font-size: 2rem !important;
   }
 }
 
