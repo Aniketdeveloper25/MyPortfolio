@@ -173,20 +173,34 @@ section {
   }
 
   /* Mobile navigation styles */
-  .nav-links {
-    display: none !important;
+  .nav-menu {
     position: fixed;
-    top: 60px;
-    right: 1rem;
+    top: 15px;
+    right: 10px;
+    z-index: 1000;
+  }
+
+  .menu-items {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
     background: white;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex-direction: column;
+    width: 200px;
   }
 
-  .nav-links.active {
+  .menu-items.active {
     display: flex !important;
-    flex-direction: column;
+  }
+
+  .menu-items a {
+    margin: 0.5rem 0;
+    padding: 0.8rem 1rem;
+    background: rgba(255,255,255,0.9);
   }
 
   .menu-toggle {
