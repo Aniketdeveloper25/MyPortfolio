@@ -1,13 +1,21 @@
-// Create this new file with the mobile menu code
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-  document.querySelector('.nav-links').classList.toggle('active');
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const navLinks = document.querySelector('.nav-links');
+    const menuToggle = document.querySelector('.menu-toggle');
+    
+    if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+        navLinks.classList.remove('active');
+    }
 });
 
-// Mobile Menu Toggle
-document.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
-    document.querySelector('.sidebar').classList.add('active');
+// Handle window resize
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        document.querySelector('.nav-links').classList.remove('active');
+    }
 });
-
-document.querySelector('.mobile-menu-close').addEventListener('click', () => {
-    document.querySelector('.sidebar').classList.remove('active');
-}); 
