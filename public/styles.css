@@ -289,3 +289,32 @@ section {
   min-height: 100vh;
   padding: 2rem;
 }
+
+/* Change menu button colors */
+.nav-menu a {
+    background: #2196F3; /* New primary color */
+    color: rgb(0, 0, 0) !important; /* Text color */
+    transition: all 0.3s ease;
+    border: 2px solid #2196F3; /* Border color */
+}
+
+.nav-menu a:hover {
+    background: linear-gradient(45deg, #2196F3, #00BCD4)!important; /* Hover color */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+/* For mobile menu */
+@media (max-width: 768px) {
+    .menu-items a {
+        background:linear-gradient(45deg, #2196F3, #00BCD4) !important;
+        color: rgb(0, 0, 0) !important;
+        border-radius: 25px;
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+    
+    .menu-items a:hover {
+        background: linear-gradient(45deg, #2196F3, #00BCD4) !important;
+    }
+}
