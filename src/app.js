@@ -2,7 +2,19 @@ const express = require('express');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const app = express();
+// Enable compression
+const compression = require('compression');
+app.use(compression());
 
+// Cache static assets
+app.use(express.static('public', {
+    maxAge: '1y',
+    setHeaders: (res, path) => {
+        if (path.endsWith('.html')) {
+            res.setHeader('Cache-Control', 'public, max-age=0');
+        }
+    }
+}));
 // Sample projects data
 const projects = [
     {
