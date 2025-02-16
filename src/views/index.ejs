@@ -857,17 +857,28 @@
     </footer>
 </body>
 <script>
-    // Wait for window load
-    window.onload = function() {
-        // Add loaded class to body after 1 second
-        setTimeout(function() {
+    // Minimum display time for loader (1000ms = 1 second)
+    const MIN_DISPLAY_TIME = 1000;
+    const loader = document.getElementById('loader');
+    const startTime = Date.now();
+
+    // Hide loader when page fully loads
+    window.addEventListener('load', () => {
+        const loadTime = Date.now() - startTime;
+        const remainingTime = Math.max(0, MIN_DISPLAY_TIME - loadTime);
+        
+        setTimeout(() => {
             document.body.classList.add('loaded');
-            
-            // Remove loader from DOM after animation
-            setTimeout(function() {
-                document.getElementById('loader').remove();
-            }, 500);
-        }, 1000);
-    };
+            setTimeout(() => loader.remove(), 500);
+        }, remainingTime);
+    });
+
+    // Fallback in case page doesn't load properly
+    setTimeout(() => {
+        if(loader) {
+            document.body.classList.add('loaded');
+            setTimeout(() => loader.remove(), 500);
+        }
+    }, 5000); // Maximum 5 second timeout
 </script>
 </html>
