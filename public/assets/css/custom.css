@@ -22,9 +22,16 @@ section {
 /* Mobile-specific hero background modifications */
 @media (max-width: 768px) {
   #hero {
-    background: url("../img/hero-bg.jpg") center right !important; /* Change to center right to show the person */
-    background-attachment: fixed !important; /* Changed from scroll to fixed for parallax effect on mobile */
+    background: url("../img/hero-bg.jpg") right center !important; /* Position to right to show the person */
+    background-attachment: fixed !important;
     background-size: cover !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  
+  /* Improve text visibility on mobile with a slightly darker overlay */
+  #hero:before {
+    background: linear-gradient(to right, rgba(5, 13, 24, 0.7), rgba(5, 13, 24, 0.3)) !important; /* Gradient overlay for better visibility */
   }
 }
 
@@ -62,6 +69,7 @@ section {
   
   #hero .hero-container {
     padding: 0 15px !important;
+    text-align: center !important;
   }
 }
 
