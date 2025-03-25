@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const profileImg = document.querySelector('.profile img');
   if (profileImg) {
     // Use a placeholder image service
-    profileImg.src = 'docs/assets/img/profile-img1.jpg';
+    profileImg.src = '/assets/img/profile-img1.jpg';
     profileImg.onerror = function() {
       // If placeholder service fails, use a colored div
       this.style.display = 'none';
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
       placeholder.style.color = 'white';
       placeholder.style.fontSize = '32px';
       placeholder.style.fontWeight = 'bold';
-      placeholder.innerHTML = 'AS'; // Initials
+      placeholder.innerHTML = 'AD'; // Initials
       parent.insertBefore(placeholder, this);
     };
   }
