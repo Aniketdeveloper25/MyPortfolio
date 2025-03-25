@@ -1,4 +1,4 @@
-# iPortfolio
+# Aniket Portfolio
 
 A responsive portfolio website template based on the [iPortfolio template from BootstrapMade](https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/).
 
