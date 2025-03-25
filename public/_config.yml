@@ -1,0 +1,4 @@
+# GitHub Pages configuration
+permalink: pretty
+exclude: [node_modules, package.json, package-lock.json]
+include: [.nojekyll] 

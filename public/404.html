@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Page Not Found - Aniket Portfolio</title>
+  <meta content="Page not found" name="description">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #272829;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+    }
+    h1 {
+      font-size: 48px;
+      color: #149ddd;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      background: #149ddd;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #37b3ed;
+    }
+  </style>
+  <script>
+    // Redirect to home page with correct path handling for GitHub Pages
+    window.onload = function() {
+      setTimeout(function() {
+        var location = window.location;
+        var path = location.pathname.replace(/\/+$/, '');
+        var repo = path.split('/')[1]; // Extract repo name for GitHub Pages
+        var baseUrl = location.origin;
+        
+        if (location.hostname === 'localhost') {
+          window.location.href = baseUrl;
+        } else if (location.hostname.indexOf('github.io') > -1) {
+          // For GitHub Pages
+          window.location.href = baseUrl + (repo ? '/' + repo : '');
+        } else {
+          window.location.href = baseUrl;
+        }
+      }, 5000); // Redirect after 5 seconds
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>404</h1>
+    <p>Oops! The page you're looking for seems to have disappeared.</p>
+    <p>Don't worry, you'll be redirected to the homepage in 5 seconds.</p>
+    <a href="/" class="btn">Go to Homepage</a>
+  </div>
+</body>
+</html> 
