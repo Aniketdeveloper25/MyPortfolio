@@ -15,6 +15,17 @@ section {
   background-size: cover !important;
   background-attachment: fixed !important;
   position: relative !important;
+  height: 100vh !important;
+  width: 100% !important;
+}
+
+/* Mobile-specific hero background modifications */
+@media (max-width: 768px) {
+  #hero {
+    background: url("../img/hero-bg.jpg") center right !important; /* Change to center right to show the person */
+    background-attachment: fixed !important; /* Changed from scroll to fixed for parallax effect on mobile */
+    background-size: cover !important;
+  }
 }
 
 /* Add overlay to ensure text visibility */
@@ -34,6 +45,24 @@ section {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   position: relative !important;
   z-index: 1 !important;
+}
+
+/* Mobile-specific hero text adjustments */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px !important;
+    margin-bottom: 10px !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important; /* Stronger shadow for better visibility */
+  }
+  
+  #hero p {
+    font-size: 18px !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
+  }
+  
+  #hero .hero-container {
+    padding: 0 15px !important;
+  }
 }
 
 /* Ensure content sections have minimum height */
