@@ -1,0 +1,820 @@
+/**
+* Custom overrides for iPortfolio template
+*/
+
+/* Ensure sections are visible */
+section {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Fix for hero section with background image */
+#hero {
+  background: url("../img/hero-bg.jpg") center center !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  position: relative !important;
+}
+
+/* Add overlay to ensure text visibility */
+#hero:before {
+  content: "" !important;
+  background: rgba(5, 13, 24, 0.3) !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Fix for hero text to ensure visibility */
+#hero h1, #hero p {
+  color: #fff !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Ensure content sections have minimum height */
+.container {
+  min-height: 20px;
+}
+
+/* Fix for the profile image if it's missing */
+.profile-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #149ddd;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Ensure portfolio items have proper size */
+.portfolio-wrap {
+  min-height: 300px;
+  margin-bottom: 30px;
+}
+
+/* Fix for testimonials */
+.testimonial-item {
+  min-height: 320px;
+}
+
+/* Fix for services */
+.services .icon-box {
+  min-height: 150px;
+}
+
+/* Fix for counters */
+.count-box {
+  min-height: 150px;
+}
+
+/* Improve sidebar styling and navigation */
+#header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  z-index: 9997 !important;
+  transition: all 0.5s !important;
+  padding: 15px !important;
+  overflow: hidden !important; /* Disable scrolling completely */
+  width: 300px !important; /* Ensure sidebar has proper width */
+  background: #040b14 !important; /* Ensure background is visible */
+  height: 100vh !important; /* Ensure full height */
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Hide webkit scrollbar */
+#header::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Profile section in sidebar */
+.profile {
+  padding-bottom: 10px !important;
+  margin-bottom: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ensure navigation menu is visible */
+.nav-menu {
+  padding: 20px 0 0 0 !important;
+  height: auto !important;
+  max-height: calc(100vh - 240px) !important; /* Ensure menu fits without scrolling */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  flex: 1 !important;
+  overflow: hidden !important;
+}
+
+/* Footer inside sidebar */
+#header .copyright {
+  position: absolute !important;
+  bottom: 15px !important;
+  left: 0 !important;
+  right: 0 !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  color: #f4f6fd !important;
+  padding: 10px 15px !important;
+}
+
+/* Ensure navigation items are visible and have proper spacing */
+.nav-menu ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  margin-bottom: 20px !important; /* Further reduce space before footer */
+}
+
+.nav-menu ul li {
+  position: relative !important;
+  white-space: nowrap !important;
+  display: block !important;
+  margin-bottom: 3px !important; /* Reduced margin */
+  width: 100% !important;
+}
+
+/* Ensure navigation items are visible and clickable */
+.nav-menu a {
+  display: flex !important;
+  align-items: center !important;
+  color: #a8a9b4 !important;
+  padding: 8px 15px !important; /* Reduced padding */
+  margin-bottom: 5px !important; /* Reduced margin */
+  transition: 0.3s !important;
+  font-size: 14px !important; /* Slightly smaller font */
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  width: 100% !important;
+}
+
+/* Improve navigation item hover and active states */
+.nav-menu a:hover, 
+.nav-menu .active, 
+.nav-menu .active:focus, 
+.nav-menu li:hover > a {
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+.nav-menu a:hover i, 
+.nav-menu .active i, 
+.nav-menu .active:focus i, 
+.nav-menu li:hover > a i {
+  color: #149ddd !important;
+}
+
+/* Fix for navigation icons */
+.nav-menu a i {
+  font-size: 20px !important; /* Slightly smaller icons */
+  padding-right: 6px !important; /* Less padding */
+  color: #6f7180 !important;
+}
+
+/* Fix for main content */
+#main {
+  margin-left: 300px !important;
+}
+
+@media (max-width: 1199px) {
+  #main {
+    margin-left: 0 !important;
+  }
+} 
+
+/* Fix mobile navigation */
+.mobile-nav-active {
+  overflow: hidden !important;
+}
+
+.mobile-nav-active #header {
+  left: 0 !important;
+}
+
+.mobile-nav-active .mobile-nav-toggle {
+  color: #fff !important;
+  position: fixed !important;
+}
+
+/* Fix for main content to ensure proper layout with sidebar */
+body {
+  overflow-x: hidden !important;
+}
+
+/* Navigation container to ensure proper spacing */
+nav#navbar {
+  height: auto !important;
+  overflow-y: visible !important;
+  padding-bottom: 70px !important; /* Add extra padding at bottom */
+}
+
+/* Fix mobile navigation toggle to ensure it doesn't block content */
+.mobile-nav-toggle {
+  display: none !important;
+}
+
+/* Style for the close button inside sidebar */
+.mobile-nav-close {
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  z-index: 9999 !important;
+  border: 0 !important;
+  font-size: 24px !important;
+  color: #fff !important;
+  background: #149ddd !important;
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  display: none !important; /* Hide by default */
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+.mobile-nav-close:hover {
+  background: #0e7cad !important;
+}
+
+/* Show close button only on mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-close {
+    display: flex !important;
+  }
+}
+
+/* Ensure close button is hidden on desktop */
+@media (min-width: 1200px) {
+  .mobile-nav-close {
+    display: none !important;
+  }
+}
+
+/* Add a hamburger button fixed to the top right for mobile */
+.mobile-menu-trigger {
+  position: fixed !important;
+  top: 15px !important;
+  right: 15px !important;
+  background: #149ddd !important;
+  color: #fff !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 24px !important;
+  cursor: pointer !important;
+  z-index: 9998 !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+@media (max-width: 1199px) {
+  .mobile-menu-trigger {
+    display: flex !important;
+  }
+
+  /* Position the sidebar off-screen by default on mobile */
+  #header {
+    left: -300px !important;
+    transition: all 0.5s ease !important;
+  }
+
+  /* When active, bring the sidebar on screen */
+  body.mobile-nav-active #header {
+    left: 0 !important;
+  }
+}
+
+/* Add a semi-transparent overlay behind the sidebar on mobile */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9996;
+}
+
+body.mobile-nav-active .sidebar-overlay {
+  display: block;
+}
+
+/* Styles for Portfolio Details Page */
+.breadcrumbs {
+  padding: 20px 0;
+  background-color: #f9f9f9;
+}
+
+.breadcrumbs h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #0e2442;
+  content: "/";
+}
+
+.portfolio-details {
+  padding-top: 40px;
+}
+
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #149ddd;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #149ddd;
+}
+
+.portfolio-details .portfolio-info {
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(5, 13, 24, 0.08);
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li + li {
+  margin-top: 10px;
+}
+
+.portfolio-details .portfolio-description {
+  padding-top: 30px;
+}
+
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0;
+}
+
+/* Make sure portfolio details page respects our layout */
+body.portfolio-details-page #main {
+  margin-left: 300px;
+}
+
+@media (max-width: 1199px) {
+  body.portfolio-details-page #main {
+    margin-left: 0;
+  }
+} 
+
+/* Portfolio Project Containers */
+.portfolio-project-container {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: all 0.3s;
+}
+
+.portfolio-project-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Project Carousel Styling */
+.project-carousel {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.project-carousel .swiper-slide {
+  border-radius: 5px;
+  overflow: hidden;
+  height: 320px; /* Set consistent height for all slides */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.project-carousel .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain; /* Changed from cover to contain to prevent distortion */
+  max-height: 320px; /* Maximum height to ensure consistency */
+}
+
+.project-carousel .swiper-pagination {
+  margin-top: 10px;
+  position: relative;
+}
+
+.project-carousel .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #149ddd;
+}
+
+.project-carousel .swiper-pagination-bullet-active {
+  background-color: #149ddd;
+}
+
+/* Project Info Styling */
+.project-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #173b6c;
+}
+
+.project-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+  color: #173b6c;
+}
+
+.project-info p {
+  margin-bottom: 15px;
+  color: #272829;
+}
+
+.project-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.project-info ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.project-info ul li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #149ddd;
+  font-weight: bold;
+}
+
+/* Project Links */
+.project-links {
+  margin-top: auto;
+}
+
+.project-links .btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  padding: 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.project-links .btn i {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.project-links .btn-primary {
+  background: #149ddd;
+  border-color: #149ddd;
+  color: #fff;
+}
+
+.project-links .btn-primary:hover {
+  background: #0d83bb;
+  border-color: #0d83bb;
+  color: #fff;
+}
+
+.project-links .btn-secondary {
+  background: #333;
+  border-color: #333;
+  color: #fff;
+}
+
+.project-links .btn-secondary:hover {
+  background: #555;
+  border-color: #555;
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .project-info {
+    margin-top: 20px;
+  }
+  
+  .project-carousel .swiper-slide {
+    height: 250px; /* Smaller height on mobile */
+  }
+  
+  .project-carousel .swiper-slide img {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-carousel .swiper-slide {
+    height: 200px; /* Even smaller height on small mobile */
+  }
+  
+  .project-carousel .swiper-slide img {
+    max-height: 200px;
+  }
+} 
+
+/* Mobile-friendly Contact Form Styles */
+@media (max-width: 768px) {
+  /* Contact section spacing */
+  #contact .container {
+    padding: 0 15px;
+  }
+
+  /* Contact form label and input sizing */
+  .php-email-form .form-group {
+    margin-bottom: 15px;
+  }
+
+  .php-email-form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  /* Improve input field touch targets */
+  .php-email-form input,
+  .php-email-form textarea {
+    padding: 12px;
+    font-size: 16px; /* Larger font for better readability on mobile */
+    border-radius: 4px;
+  }
+
+  /* Make textarea taller on mobile */
+  .php-email-form textarea {
+    min-height: 150px;
+  }
+
+  /* Improve submit button for touch */
+  .php-email-form button[type="submit"] {
+    padding: 12px 24px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 50px;
+    margin-top: 10px;
+  }
+
+  /* Status message styling */
+  .php-email-form .loading,
+  .php-email-form .error-message,
+  .php-email-form .sent-message {
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
+  /* Map responsive */
+  #contact .info iframe {
+    height: 250px;
+    margin-bottom: 20px;
+  }
+
+  /* Contact info styling */
+  #contact .info {
+    padding: 20px;
+  }
+
+  #contact .info div {
+    margin-bottom: 15px;
+  }
+
+  #contact .info i {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  /* Prevent horizontal scrolling on mobile */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Make sure contact section fits properly */
+  #contact {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  /* Ensure form doesn't overflow container */
+  .php-email-form {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Make inputs respect container width */
+  .php-email-form input,
+  .php-email-form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Fix padding on form container */
+  #contact .col-lg-7 {
+    padding: 0 15px;
+  }
+  
+  /* Better alignment for the contact info box */
+  #contact .info {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+/* Additional styles for very small devices */
+@media (max-width: 480px) {
+  /* Adjust contact section layout */
+  #contact .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  /* Full width on very small screens */
+  #contact .col-lg-5,
+  #contact .col-lg-7 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Reduce padding on info section */
+  #contact .info {
+    padding: 15px;
+  }
+
+  /* Smaller text for contact form */
+  .php-email-form label {
+    font-size: 13px;
+  }
+
+  /* Adjust name/email fields layout */
+  .php-email-form .row .col-md-6 {
+    width: 100%;
+  }
+}
+
+/* Additional contact section responsive improvements */
+@media (max-width: 992px) {
+  /* Ensure proper column stacking and spacing */
+  #contact .row > div {
+    margin-bottom: 30px;
+  }
+  
+  /* Make sure the contact form container looks good */
+  #contact .php-email-form {
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+  }
+  
+  /* Fix alignment of info section on tablets */
+  #contact .info {
+    width: 100%;
+  }
+}
+
+/* Ensure container alignment on mobile */
+@media (max-width: 768px) {
+  #contact .container {
+    max-width: 100%;
+  }
+  
+  /* Fix the field layout in mobile view */
+  #contact .form-group.col-md-6 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Fix issue with name/email field row */
+  #contact .php-email-form .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+}
+
+/* Fix touch interactions with form elements */
+@media (hover: none) {
+  /* Improve touchability of form elements */
+  .php-email-form input:focus,
+  .php-email-form textarea:focus {
+    border-color: #149ddd;
+    box-shadow: 0 0 0 3px rgba(20, 157, 221, 0.25);
+  }
+  
+  /* Improve tap target for the submit button */
+  .php-email-form button[type="submit"] {
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s ease;
+  }
+  
+  .php-email-form button[type="submit"]:active {
+    background-color: #0d7fa8;
+  }
+}
+
+/* Custom Naukri Icon */
+.social-links .Naukri span {
+  background-color: #ffffff;
+  border-radius: 50%;
+  color: #0e76a8; /* Naukri blue color */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.social-links .Naukri:hover span {
+  background-color: #0e76a8;
+  color: #ffffff;
+} 
