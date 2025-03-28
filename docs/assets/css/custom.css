@@ -986,3 +986,55 @@ body.portfolio-details-page #main {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 } 
+
+/* Certificate Gallery Styles */
+.glightbox-container .gslide-image img {
+  max-width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+}
+
+.glightbox-container .gslide-description {
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  color: white;
+}
+
+.certificate-gallery-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate-gallery-container img {
+  max-width: 45%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .certificate-gallery-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .certificate-gallery-container img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* GLightbox Overrides */
+.glightbox-container .gslide-inline {
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.glightbox-container .gdesc-inner {
+  text-align: center;
+}
