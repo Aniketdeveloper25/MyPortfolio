@@ -865,6 +865,8 @@ body.portfolio-details-page #main {
 .certificate-box {
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 .certificate-box:hover {
@@ -886,6 +888,12 @@ body.portfolio-details-page #main {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.certificate-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .certificate-info h4 {
   color: #173b6c;
   font-size: 18px;
@@ -898,8 +906,83 @@ body.portfolio-details-page #main {
   color: #555;
 }
 
+/* Certificate view buttons */
+.certificate-links {
+  margin-top: auto !important;
+}
+
+.certificate-links .btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.certificate-links .btn-primary {
+  background: #149ddd;
+  border-color: #149ddd;
+}
+
+.certificate-links .btn-primary:hover {
+  background: #0e7cad;
+  border-color: #0e7cad;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-links .btn i {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
 @media (max-width: 768px) {
   .certificate-box {
     margin-bottom: 25px;
   }
+}
+
+.certificate-img a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.certificate-img a::before {
+  content: "";
+  background: rgba(20, 157, 221, 0.5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0;
+}
+
+.certificate-img a::after {
+  content: "\ec1c"; /* Boxicons magnify icon */
+  font-family: 'boxicons' !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 28px;
+  color: #fff;
+  z-index: 2;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.certificate-img a:hover::before {
+  opacity: 1;
+}
+
+.certificate-img a:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 } 
