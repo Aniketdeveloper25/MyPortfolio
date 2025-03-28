@@ -796,20 +796,31 @@
         new PureCounter();
       }
       
-      // Initialize GLightbox for certificates
-      if (typeof GLightbox !== 'undefined') {
-        const certificateLightbox = GLightbox({
-          selector: '.certificate-view',
-          touchNavigation: true,
-          loop: false,
-          autoplayVideos: false,
-          onOpen: () => {
-            // Pause any animations when lightbox is open
-            if (typeof AOS !== 'undefined') {
-              AOS.refresh();
-            }
-          }
-        });
+      // Initialize GLightbox
+      const lightbox = GLightbox({
+      selector: '.certificate-view',
+      touchNavigation: true,
+      loop: false,
+      openEffect: 'zoom',
+      closeEffect: 'zoom',
+      cssEffects: {
+        zoom: {
+        in: 'zoomIn',
+        out: 'zoomOut'
+        }
+      },
+      onOpen: () => {
+      // Refresh AOS after opening lightbox
+      if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+        }
+      },
+      onSlideChanged: () => {
+      // Handle gallery navigation
+      const activeElement = document.querySelector('.gslide-current');
+      if (activeElement.querySelector('.certificate-gallery-container')) {
+        activeElement.classList.add('certificate-gallery-active');
+        }
       }
     });
 
