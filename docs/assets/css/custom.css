@@ -854,4 +854,52 @@ body.portfolio-details-page #main {
 .social-links .Naukri:hover span {
   background-color: #0e76a8;
   color: #ffffff;
+}
+
+/* Certifications Section */
+.certifications {
+  padding: 60px 0;
+  background-color: #f7f8f9;
+}
+
+.certificate-box {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.certificate-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.certificate-img {
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-img img {
+  max-height: 100%;
+  object-fit: contain;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.certificate-info h4 {
+  color: #173b6c;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.certificate-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .certificate-box {
+    margin-bottom: 25px;
+  }
 } 
