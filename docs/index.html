@@ -65,6 +65,7 @@
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Skills</span></a></li>
+          <li><a href="#certifications" class="nav-link scrollto"><i class="bx bx-badge-check"></i> <span>Certifications</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
@@ -272,6 +273,65 @@
 
       </div>
     </section><!-- End Skills Section -->
+
+    <!-- ======= Certifications Section ======= -->
+    <section id="certifications" class="certifications">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Certifications</h2>
+          <p>I am committed to continuous learning and professional growth. These certifications represent my dedication to expanding my technical knowledge and staying current with industry standards and best practices.</p>
+        </div>
+
+        <div class="row">
+          <!-- Certificate 1 -->
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="certificate-box shadow-sm p-3 bg-white rounded h-100">
+              <div class="certificate-img">
+                <img src="assets/img/certificates/certificate1.jpg" class="img-fluid" alt="Certificate">
+              </div>
+              <div class="certificate-info mt-3">
+                <h4>Web Development Certification</h4>
+                <p class="mb-1"><strong>Issuing Organization:</strong> Udemy</p>
+                <p class="mb-1"><strong>Date:</strong> January 2023</p>
+                <p>Comprehensive course covering HTML, CSS, JavaScript, and responsive design principles.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate 2 -->
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="certificate-box shadow-sm p-3 bg-white rounded h-100">
+              <div class="certificate-img">
+                <img src="assets/img/certificates/certificate2.jpg" class="img-fluid" alt="Certificate">
+              </div>
+              <div class="certificate-info mt-3">
+                <h4>React JS Development</h4>
+                <p class="mb-1"><strong>Issuing Organization:</strong> Coursera</p>
+                <p class="mb-1"><strong>Date:</strong> March 2023</p>
+                <p>Advanced concepts in React JS including hooks, context API, and state management.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificate 3 -->
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="certificate-box shadow-sm p-3 bg-white rounded h-100">
+              <div class="certificate-img">
+                <img src="assets/img/certificates/certificate3.jpg" class="img-fluid" alt="Certificate">
+              </div>
+              <div class="certificate-info mt-3">
+                <h4>Database Management</h4>
+                <p class="mb-1"><strong>Issuing Organization:</strong> LinkedIn Learning</p>
+                <p class="mb-1"><strong>Date:</strong> June 2023</p>
+                <p>Comprehensive understanding of database design, SQL, and performance optimization techniques.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Certifications Section -->
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
@@ -561,7 +621,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="https://formspree.io/f/meoazgvl" method="post" role="form" class="php-email-form">
+            <form action="https://formspree.io/f/xnqedppe" method="POST" role="form" class="php-email-form">
               <input type="hidden" name="honeypot" id="honeypot" class="d-none">
               <div class="row">
                 <div class="form-group col-md-6">
@@ -663,36 +723,42 @@
     });
 
     document.querySelector('.php-email-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(this);
-  
-  // Use fetch to send to a form service
-  fetch('https://formspree.io/f/meoazgvl', {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => {
-    if (response.ok) {
-      // Show success message
-      document.querySelector('.sent-message').style.display = 'block';
-      this.reset(); // Reset form
-    } else {
-      // Show error message
-      document.querySelector('.error-message').style.display = 'block';
-    }
-  })
-  .catch(error => {
-    // Show error message
-    document.querySelector('.error-message').textContent = "Server error. Please try again later.";
-    document.querySelector('.error-message').style.display = 'block';
-  })
-  .finally(() => {
-    document.querySelector('.loading').style.display = 'none';
-  });
-});
+      e.preventDefault();
+      
+      // Show loading and hide other messages
+      document.querySelector('.loading').style.display = 'block';
+      document.querySelector('.error-message').style.display = 'none';
+      document.querySelector('.sent-message').style.display = 'none';
+      
+      const formData = new FormData(this);
+      
+      // Use fetch to send to a form service
+      fetch('https://formspree.io/f/xnqedppe', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Show success message
+          document.querySelector('.sent-message').style.display = 'block';
+          this.reset(); // Reset form
+        } else {
+          // Show error message
+          document.querySelector('.error-message').style.display = 'block';
+        }
+      })
+      .catch(error => {
+        // Show error message
+        document.querySelector('.error-message').textContent = "Server error. Please try again later.";
+        document.querySelector('.error-message').style.display = 'block';
+      })
+      .finally(() => {
+        document.querySelector('.loading').style.display = 'none';
+      });
+    });
   </script>
 </body>
 
